@@ -22,7 +22,11 @@ export const Formulario: React.FC = () => {
     async (dadosUsuario: any) => await logarUsuario(dadosUsuario),
     {
       onError: (error: any) => {
-        toast.error(`Ops! Houve um error: ${error.response.data}`);
+        const msg =
+          error?.response?.data ||
+          error?.message ||
+          "Usuário ou senha incorretos.";
+        toast.error(`Ops! ${msg}`);
       },
       onSuccess: (dados: any) => {
         const usuario = dados?.data;

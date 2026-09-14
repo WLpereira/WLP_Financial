@@ -35,7 +35,11 @@ export const Formulario: React.FC = () => {
     async (usuario: Usuario) => await registrarUsuario(usuario),
     {
       onError: (error: any) => {
-        toast.error(`Ops! Houve um error: ${error.response.data}`);
+        const msg =
+          error?.response?.data ||
+          error?.message ||
+          "Erro ao realizar cadastro. Verifique os dados.";
+        toast.error(`Ops! ${msg}`);
       },
       onSuccess: () => {
         toast.success("Usuario registrado com sucesso");
