@@ -34,19 +34,18 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 - [x] Todas as 9 tabelas criadas: `usuarios`, `elementos`, `subelementos`, `tipos`, `subtipos`, `fluxocaixa`, `programacao_fluxocaixa`, `tipos_despesas`, `locais`.
 - [x] Todos os índices únicos, PKs e FKs com CASCADE criados corretamente.
 
-### ✅ Etapa 6 — Configuração Local
-- [x] `backend/.env` criado com DATABASE_URL e DIRECT_URL apontando para Supabase.
-- [x] `frontend-vite/.env` criado com VITE_ENDPOINT para localhost.
+### ✅ Etapa 6 — Teste Local BACKEND ✅
+- [x] `backend/.env` criado com DATABASE_URL e DIRECT_URL apontando para Supabase (us-east-2).
 - [x] TOKEN_SECRET seguro de 64 caracteres gerado automaticamente.
 - [x] CORS configurado para `http://localhost:5173` em desenvolvimento.
-- [x] `npm install` no backend executado com sucesso (465 pacotes instalados).
+- [x] `npm install` no backend concluído (465 pacotes).
+- [x] `npx prisma generate` executado com sucesso (Prisma Client 4.16.2 gerado).
+- [x] **`npm run dev` — API rodando na porta 3000** ✅
 
-### 🟡 Etapa 6 — Próximos Testes Locais
-- [ ] `npx prisma generate` no backend.
-- [ ] Iniciar backend com `npm run dev`.
+### 🟡 Etapa 6 — Teste Local FRONTEND
 - [ ] `npm install` no frontend.
-- [ ] Iniciar frontend com `npm run dev`.
-- [ ] Testar cadastro, login, lançamentos e dashboard.
+- [ ] Iniciar frontend com `npm run dev` (porta 5173).
+- [ ] Testar cadastro, login, lançamentos e dashboard no navegador.
 
 ### ⏳ Etapas Restantes
 - [ ] Etapa 8: Deploy do Backend no **Render** (gratuito, sem cartão).
@@ -59,15 +58,15 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 ## 🔐 Variáveis de Ambiente (NUNCA commitar os valores reais!)
 
 ### Backend Local (`backend/.env`)
-| Variável | Valor |
+| Variável | Descrição |
 |---|---|
-| `DATABASE_URL` | Transaction Pooler porta 6543 |
-| `DIRECT_URL` | Session Pooler porta 5432 |
+| `DATABASE_URL` | Transaction Pooler Supabase porta 6543 |
+| `DIRECT_URL` | Session Pooler Supabase porta 5432 |
 | `PORT_SERVER` | 3000 |
-| `TOKEN_SECRET` | Chave de 64 chars gerada |
+| `TOKEN_SECRET` | Chave JWT de 64 chars gerada automaticamente |
 | `CORS_ORIGIN` | http://localhost:5173 |
 
 ### Frontend Local (`frontend-vite/.env`)
-| Variável | Valor |
+| Variável | Descrição |
 |---|---|
 | `VITE_ENDPOINT` | http://localhost:3000/api/v1 |
