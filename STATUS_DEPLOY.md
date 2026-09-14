@@ -48,11 +48,22 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 - [x] Iniciar frontend com `npm run dev` (porta 5173).
 - [x] Teste de login e Dashboard validado com sucesso! 🎉
 
-### ✅ Etapa 7.5 — Customização Visual e Identidade (WLP Financial)
-- [x] Removida a imagem animada gigante de "Fx finanças" do fundo.
-- [x] Cor predominante alterada de Verde (#0ACC8E) para Azul Tecnológico (#2563EB) em toda a aplicação.
-- [x] Imagem com personagens removida da tela de Login/Registro para um layout mais clean.
-- [x] Nome da logo no sistema atualizado para **WLP Financial**.
+### ✅ Etapa 7.5 — Redesign Visual Completo (WLP Financial)
+- [x] **Título da aba** alterado de "Sistema Fluxos V2" para **WLP Financial**.
+- [x] **Favicon** atualizado com a nova logo WLP.
+- [x] **Nova logo WLP Financial** colocada na Sidebar, na tela de Login e no Registro.
+- [x] **Paleta de cores** completamente renovada:
+  - Fundo dark navy `#0A1628` / `#0D1F3C`
+  - Primária azul `#1B3A8C`
+  - Accent teal `#00B4D8`
+  - Accent verde `#00D97E`
+- [x] **Tela de Login** redesenhada: fundo dark com grid decorativo + glassmorphism card.
+- [x] **Tela de Registro** com mesmo tema dark da logo.
+- [x] **Sidebar** dark com gradiente azul marinho e logo no topo.
+- [x] **Header/Topbar** com gradiente dark blue → teal.
+- [x] **Botões** e **inputs** modernizados com glassmorphism.
+- [x] **Responsivo** para celular em todos os componentes (breakpoint 840px).
+- [x] **Fonte Inter** (Google Fonts) adicionada para tipografia moderna.
 
 ### ⏳ Etapas Restantes (Deploy Online)
 - [ ] Etapa 8: Deploy do Backend no **Render** (gratuito, sem cartão).
