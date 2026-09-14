@@ -16,30 +16,58 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 ## 🕒 Histórico de Progresso
 
 ### ✅ Etapa 1 — Repositório
-- [x] Repositório clonado e desvinculado do projeto original.
+- [x] Repositório clonado e desvinculado do projeto original (JoaoG23/fx-financas).
 - [x] Removidos arquivos de credenciais originais (.env.prod).
 - [x] Criados templates limpos `.env.example` no backend e frontend.
-- [x] Criados e atualizados `.gitignore` na raiz, backend e frontend.
-- [x] Branch `deploy-supabase` criada e enviada com sucesso para `WLpereira/WLP_Financial.git`.
+- [x] Criados e atualizados `.gitignore` na raiz, backend e frontend (bloqueia .env/*).
+- [x] Branch `deploy-supabase` criada e enviada para `WLpereira/WLP_Financial.git`.
 
 ### ✅ Etapa 2 — Análise do Banco de Dados
-- [x] Validadas todas as 9 tabelas (`usuarios`, `elementos`, `subelementos`, `tipos`, `subtipos`, `fluxocaixa`, `programacao_fluxocaixa`, `tipos_despesas`, `locais`).
+- [x] Validadas todas as 9 tabelas do schema.prisma.
 - [x] Confirmada total compatibilidade com PostgreSQL e Supabase.
 - [x] `schema.prisma` atualizado com `directUrl` para suporte a migrations no Supabase.
+- [x] Provider corrigido de `postgres` para `postgresql`.
 
 ### ✅ Etapa 3, 4 e 5 — Supabase e Banco de Dados
-- [x] Projeto Supabase criado (`vouwunakkbxvghwykxuz`).
-- [x] Script SQL executado com sucesso no SQL Editor do Supabase (`Success. No rows returned`).
-- [x] Todas as 9 tabelas, PKs, FKs e Índices Únicos foram criados com sucesso no banco.
+- [x] Projeto Supabase criado (`Financeiro_WLP` - `vouwunakkbxvghwykxuz`).
+- [x] Script SQL completo executado no SQL Editor do Supabase com sucesso.
+- [x] Todas as 9 tabelas criadas: `usuarios`, `elementos`, `subelementos`, `tipos`, `subtipos`, `fluxocaixa`, `programacao_fluxocaixa`, `tipos_despesas`, `locais`.
+- [x] Todos os índices únicos, PKs e FKs com CASCADE criados corretamente.
 
-### 🟡 Etapa 6 — Teste Local
-- [x] Configuração dos arquivos `.env` locais para conexão.
-- [ ] Execução e validação do Backend (`npm run dev`).
-- [ ] Execução e validação do Frontend (`npm run dev`).
-- [ ] Teste do fluxo completo (cadastro, login, lançamentos, gráficos).
+### ✅ Etapa 6 — Configuração Local
+- [x] `backend/.env` criado com DATABASE_URL e DIRECT_URL apontando para Supabase.
+- [x] `frontend-vite/.env` criado com VITE_ENDPOINT para localhost.
+- [x] TOKEN_SECRET seguro de 64 caracteres gerado automaticamente.
+- [x] CORS configurado para `http://localhost:5173` em desenvolvimento.
+- [x] `npm install` no backend executado com sucesso (465 pacotes instalados).
 
-### ⏳ Próximos Passos
-1. Configurar a senha do banco em `backend/.env`.
-2. Rodar o backend e frontend localmente.
-3. Fazer deploy do backend no Render.
-4. Fazer deploy do frontend no Cloudflare Pages.
+### 🟡 Etapa 6 — Próximos Testes Locais
+- [ ] `npx prisma generate` no backend.
+- [ ] Iniciar backend com `npm run dev`.
+- [ ] `npm install` no frontend.
+- [ ] Iniciar frontend com `npm run dev`.
+- [ ] Testar cadastro, login, lançamentos e dashboard.
+
+### ⏳ Etapas Restantes
+- [ ] Etapa 8: Deploy do Backend no **Render** (gratuito, sem cartão).
+- [ ] Etapa 9: Deploy do Frontend no **Cloudflare Pages** (gratuito).
+- [ ] Etapa 10: Configurar CORS com a URL real do frontend em produção.
+- [ ] Etapa 11: Configurar variáveis de ambiente no Render e Cloudflare.
+
+---
+
+## 🔐 Variáveis de Ambiente (NUNCA commitar os valores reais!)
+
+### Backend Local (`backend/.env`)
+| Variável | Valor |
+|---|---|
+| `DATABASE_URL` | Transaction Pooler porta 6543 |
+| `DIRECT_URL` | Session Pooler porta 5432 |
+| `PORT_SERVER` | 3000 |
+| `TOKEN_SECRET` | Chave de 64 chars gerada |
+| `CORS_ORIGIN` | http://localhost:5173 |
+
+### Frontend Local (`frontend-vite/.env`)
+| Variável | Valor |
+|---|---|
+| `VITE_ENDPOINT` | http://localhost:3000/api/v1 |
