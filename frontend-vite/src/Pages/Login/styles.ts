@@ -45,14 +45,10 @@ export const ContainerMain = styled.main`
   width: 100vw;
 
   display: flex;
-  justify-content: end;
+  justify-content: center;
   flex-wrap: wrap;
-  background-image: url(${imageLogin});
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 
-  background-color: #0acc8e;
+  background-color: #2563EB;
 
   /* background-color: #f8f8f9; */
   /* background-color:#FFA26B; */
@@ -66,6 +62,6 @@ export const ContainerMain = styled.main`
 
   @media only screen and (max-width: 768px) {
     background-image: none;
-    background-color: #0acc8e;
+    background-color: #2563EB;
   }
 `;

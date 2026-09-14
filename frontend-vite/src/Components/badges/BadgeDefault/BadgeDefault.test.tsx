@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+﻿import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { BadgeDefault } from ".";
 
@@ -39,7 +39,7 @@ describe("BadgeDefault", () => {
       white-space: nowrap;
       vertical-align: baseline;
       border-radius: 0.25rem;
-      background-color: #0ACC8E;
+      background-color: #2563EB;
       color: #fff;
     `);
   });

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 type Props = {
@@ -20,7 +20,7 @@ export const DonutGrafico: React.FC<Props> = ({ titulo, series, labels }) => {
         position: "bottom",
       },
       colors: [
-        "#0acc8e",
+        "#2563EB",
         "#FFA26B",
         "#4F63F7",
         "#F78187",

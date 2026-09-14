@@ -1,9 +1,9 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 interface BadgeProps {
   cor?: "verde" | "vermelho";
 }
-// Criação do componente Badge
+// CriaÃ§Ã£o do componente Badge
 export const Badge = styled.span<BadgeProps>`
   display: inline-block;
   padding: 0.25em 0.4em;
@@ -14,6 +14,6 @@ export const Badge = styled.span<BadgeProps>`
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
-  background-color: ${props => props.cor === 'verde' ? '#0ACC8E' : 'tomato'};
+  background-color: ${props => props.cor === 'verde' ? '#2563EB' : 'tomato'};
   color: #fff; // Texto branco
 `;

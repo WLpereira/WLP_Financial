@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 import { Series } from "./types/Series";
@@ -75,7 +75,7 @@ export const MultiplasBarrasGrafico: React.FC<Props> = ({
         },
       },
 
-      colors: ["#F77B36", "#0ACC8E"],
+      colors: ["#F77B36", "#2563EB"],
     },
   };
 

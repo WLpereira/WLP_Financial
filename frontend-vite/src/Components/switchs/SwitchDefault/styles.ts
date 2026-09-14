@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const SwitchContainer = styled.label`
   position: relative;
@@ -50,11 +50,11 @@ export const SwitchInput = styled.input`
 
 
   &:checked + ${SwitchSlider} {
-    background-color: #0ACC8E;
+    background-color: #2563EB;
   }
 
   &:focus + ${SwitchSlider} {
-    box-shadow: 0 0 1px #0ACC8E;
+    box-shadow: 0 0 1px #2563EB;
   }
 
   &:checked + ${SwitchSlider}:before {

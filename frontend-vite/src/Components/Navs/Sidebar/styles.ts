@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 export const PerfilImagem = styled.div`
   border-radius: 4em;
 
@@ -46,7 +46,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.5em;
 
-  background-color: #0acc8e;
+  background-color: #2563EB;
 
   box-shadow: 3px 2px 2px #7e7e7e14;
 
@@ -77,9 +77,9 @@ export const Item = styled.li`
   :hover {
     transition: 0.4s;
     background-color: #fff;
-    color: #0acc8e;
+    color: #2563EB;
     a {
-      color: #0acc8e;
+      color: #2563EB;
     }
   }
 `;
@@ -105,9 +105,9 @@ export const Elementos = styled.ul`
     transition: 0.4s;
     animation: balancar 2s linear infinite;
     background-color: #fff;
-    color: #0acc8e;
+    color: #2563EB;
     a {
-      color: #0acc8e;
+      color: #2563EB;
     }
   }
 `;
@@ -125,6 +125,6 @@ export const ColecaoElementos = styled.summary`
   :hover {
     transition: 0.3s;
     background-color: #fff;
-    color: #0acc8e;
+    color: #2563EB;
   }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 import { SeriesLabel } from "./types/SeriesLabel";
@@ -44,12 +44,12 @@ export const BarraHorizontalMarcadoresGrafico: React.FC<Props> = ({
           blur: 1,
         },
       },
-      colors: ["#0acc8e", "#FFA26B"],
+      colors: ["#2563EB", "#FFA26B"],
 
       legend: {
         show: true,
         showForSingleSeries: true,
-        customLegendItems: ["Gasto Mês", "Saldo Atual"],
+        customLegendItems: ["Gasto MÃªs", "Saldo Atual"],
       },
     },
   };

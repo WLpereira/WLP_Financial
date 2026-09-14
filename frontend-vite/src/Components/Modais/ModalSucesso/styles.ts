@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const BackGround = styled.section`
   display: flex;
@@ -13,7 +13,7 @@ export const BackGround = styled.section`
 
   width: 100vw;
   height: 100vh;
-  background-color: #0acc8e;
+  background-color: #2563EB;
 
   align-items: center;
   justify-content: center;

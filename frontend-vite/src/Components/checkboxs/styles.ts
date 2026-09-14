@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 10px;
@@ -27,8 +27,8 @@ export const RedRadio = styled(Radio)`
   }
 `;
 export const GreenRadio = styled(Radio)`
-  border: 2px solid #0acc8e;
+  border: 2px solid #2563EB;
   :checked {
-    background-image: radial-gradient(white 40%, #0acc8e 50%);
+    background-image: radial-gradient(white 40%, #2563EB 50%);
   }
 `;

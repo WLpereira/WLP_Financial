@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+﻿import { toast } from "react-toastify";
 import { useQuery } from "react-query";
 
 import { IoBagHandle } from "react-icons/io5";
@@ -48,7 +48,7 @@ export const Dashboard = () => {
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <h3>Receitas mês</h3>
+              <h3>Receitas mÃªs</h3>
               <h2>{receitasConvertida}</h2>
             </div>
             <RiMoneyDollarCircleFill size={tamanhoIcones} color="#FFA26B" />
@@ -58,7 +58,7 @@ export const Dashboard = () => {
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <h3>Despesas mês</h3>
+              <h3>Despesas mÃªs</h3>
               <FontDespesa>{despesasConvertida} </FontDespesa>
             </div>
             <IoBagHandle size={tamanhoIcones} color="#F78187" />
@@ -71,13 +71,13 @@ export const Dashboard = () => {
               <h3>Saldo atual</h3>
               <h2>{saldoAtualConvertida} </h2>
             </div>
-            <GiReceiveMoney size={tamanhoIcones} color="#0acc8e" />
+            <GiReceiveMoney size={tamanhoIcones} color="#2563EB" />
           </DashboardStyle.Caixa>
         </Card>
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <strong>Selecione um mês</strong>
+              <strong>Selecione um mÃªs</strong>
               <MesSelect />
             </div>
             <MdOutlineCalendarMonth size={tamanhoIcones} color="#6979F8" />

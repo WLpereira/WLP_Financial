@@ -22,7 +22,6 @@ function App() {
       <div>
         <ToastContainer></ToastContainer>
         <div>
-          <IconFundo1Flutuante src={calculadora} alt="fundo" />
           <GlobalStyle />
           <Router>
             <InicialRouters />

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const Container = styled.main`
   display: block;
@@ -11,7 +11,7 @@ export const Container = styled.main`
 export const TotalReceitas = styled.h3`
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  color: #0acc8e;
+  color: #2563EB;
 `;
 export const Formulario = styled.div`
   margin-bottom: 1.5em;

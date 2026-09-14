@@ -1,4 +1,4 @@
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const Container = styled.div`
   width: 80vw;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 
   justify-content: space-between;
 
-  background-color: #0acc8e;
+  background-color: #2563EB;
   box-shadow: 2px 2px 1px rgb(130, 130, 130,0.2);
   color: #fff;
   a {
@@ -51,7 +51,7 @@ export const ImageContainer = styled.div`
   /* :hover {
     transition: 0.3s;
     background-color: #fff;
-    color: #0acc8e;
+    color: #2563EB;
   } */
 `;
 export const VoltarContainer = styled.div`
@@ -65,7 +65,7 @@ export const VoltarContainer = styled.div`
   :hover {
     transition: 0.3s;
     background-color: #fff;
-    color: #0acc8e;
+    color: #2563EB;
   }
 `;
 export const VoltarText = styled.div`

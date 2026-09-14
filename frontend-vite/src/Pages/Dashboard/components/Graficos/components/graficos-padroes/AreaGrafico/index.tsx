@@ -1,4 +1,4 @@
-import ReactApexChart from "react-apexcharts";
+﻿import ReactApexChart from "react-apexcharts";
 
 type Props = {
   titulo?: string;
@@ -31,7 +31,7 @@ export const AreaGrafico: React.FC<Props> = ({
       type: "solid",
       opacity: 0.9,
     },
-    colors: [ "#6979F8", "#0acc8e"],
+    colors: [ "#6979F8", "#2563EB"],
     dataLabels: {
       enabled: true,
       style: {

@@ -39,15 +39,10 @@ export const ContainerMain = styled.main`
   width: 100vw;
 
   display: flex;
-  justify-content: end;
+  justify-content: center;
   flex-wrap: wrap;
 
-  background-image: url(${imageLogin});
-
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  background-color: #2563EB;
 
   position: fixed;
   top: 0;
@@ -59,6 +54,6 @@ export const ContainerMain = styled.main`
     justify-content: center;
 
     align-content: center;
-    background-color: #0acc8e;
+    background-color: #2563EB;
   }
 `;
