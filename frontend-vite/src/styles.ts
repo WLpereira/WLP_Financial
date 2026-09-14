@@ -12,18 +12,16 @@ export const BotaoPorCima = styled.div`
 `
 export const Body = styled.div`
   position: absolute;
-
   display: flex;
   height: 80vh;
   justify-content: center;
-  overflow-y:scroll;
-  overflow-x:hidden;
-  
-
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 15vh;
-  width: 80vw;
-  left: 17vw;
-  @media screen and (max-width: 769px) {
+  width: calc(100vw - 240px);
+  left: 228px;
+
+  @media screen and (max-width: 840px) {
     left: 0vw;
     right: 0vw;
     width: 95vw;

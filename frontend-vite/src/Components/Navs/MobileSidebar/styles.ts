@@ -1,4 +1,4 @@
-﻿import styled from "styled-components";
+import styled from "styled-components";
 
 export const Exit = styled.button`
   color: white;
@@ -16,15 +16,12 @@ export const Container = styled.div`
   gap: 1em;
   justify-content: center;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 27px;
-
+  @media only screen and (max-width: 840px) {
+    font-size: 22px;
     box-shadow: 2px 2px 4px #00000027;
-    background-color: #2563EB;
-
+    background: linear-gradient(180deg, #0A1628 0%, #0D1F3C 60%, #112240 100%);
     display: flex;
     position: fixed;
-
     padding: 10px;
     width: 100vw;
     height: 100vh;

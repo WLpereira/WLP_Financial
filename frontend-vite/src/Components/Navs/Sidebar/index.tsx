@@ -10,16 +10,35 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { BiBookmarkAlt, BiCartDownload, BiCategoryAlt } from "react-icons/bi";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import styled from "styled-components";
 
 import { tiposFluxosCaixa, categorias } from "./data/listLinks";
-
 import { ImagemPerfil } from "./ImagePerfil";
 import * as SideBar from "./styles";
-
 import { limparSessaoUsuario } from "../../../utils/limparSessaoUsuario";
-
 import { buscaDadoUsuarioNaSessao } from "../../../utils/buscaDadoUsuarioNaSessao";
 import { limparConfiguracoesPaginaPorChave } from "../../../utils/paginacao/limparConfiguracoesPaginaPorChave/limparConfiguracoesPaginaPorChave";
+import wlpLogo from "../../../assets/wlp-logo.png";
+
+/* Logotipo no topo da sidebar */
+const SidebarLogo = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(135deg, #1B3A8C 0%, #0A1628 100%);
+
+  img {
+    width: 130px;
+    object-fit: contain;
+    filter: brightness(1.15);
+  }
+`;
 
 const Sidebar: React.FC = () => {
   const { nomeUsuario, imagePerfil } = buscaDadoUsuarioNaSessao();
@@ -27,6 +46,10 @@ const Sidebar: React.FC = () => {
 
   return (
     <SideBar.Container>
+      <SidebarLogo>
+        <img src={wlpLogo} alt="WLP Financial" />
+      </SidebarLogo>
+
       <SideBar.PerfilImagem>
         <ImagemPerfil caminho_imagem={perfil} />
         <Link to={"/usuario_logado"}>
@@ -72,6 +95,7 @@ const Sidebar: React.FC = () => {
           <p>Tipos de Despesas</p>
         </Link>
       </SideBar.Item>
+
       <SideBar.Item>
         <BsFillCalendarWeekFill />
         <Link to={"/agenda"}>
@@ -96,6 +120,7 @@ const Sidebar: React.FC = () => {
           })}
         </SideBar.Elementos>
       </details>
+
       <SideBar.Item onClick={limparSessaoUsuario}>
         <IoLogOut />
         <Link to={"/"}>
@@ -105,4 +130,5 @@ const Sidebar: React.FC = () => {
     </SideBar.Container>
   );
 };
+
 export default Sidebar;

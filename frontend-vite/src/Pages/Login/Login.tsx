@@ -1,13 +1,17 @@
+import React from "react";
 import { Formulario } from "./Formulario/Formulario";
-
-import { ContainerMain, LoginContainer } from "./styles";
+import { ContainerMain, LoginContainer, LogoWrapper, LogoImg } from "./styles";
+import wlpLogo from "../../assets/wlp-logo.png";
 
 const Login: React.FC = () => {
   return (
     <ContainerMain>
       <LoginContainer>
-        <h3>Login</h3>
-        <h5>Acesse o seu cadastro aqui</h5>
+        <LogoWrapper>
+          <LogoImg src={wlpLogo} alt="WLP Financial" />
+        </LogoWrapper>
+        <h3>Bem-vindo de volta</h3>
+        <h5>Acesse a sua conta</h5>
         <Formulario />
       </LoginContainer>
     </ContainerMain>
