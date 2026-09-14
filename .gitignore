@@ -1,0 +1,28 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Environment files (CRÍTICO: nunca comitar credenciais)
+.env
+.env.*
+!.env.example
+*.env
+
+# Uploads
+uploads/usuarios/*
+!uploads/usuarios/.gitkeep
+backend/uploads/usuarios/*
+!backend/uploads/usuarios/.gitkeep
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

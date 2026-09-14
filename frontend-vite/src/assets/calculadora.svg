@@ -1,0 +1,15 @@
+<svg width="500" height="400" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 25V75M40 25H65M40 50H60M52 20V80" 
+        stroke="#0ACC8E" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        fill="none"/>
+  
+  <text x="85" y="65" 
+        font-family="Arial, sans-serif" 
+        font-size="38" 
+        font-weight="bold" 
+        fill="#333">
+    Fx <tspan fill="#0ACC8E">finanças</tspan>
+  </text>
+</svg>
