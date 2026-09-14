@@ -16,7 +16,6 @@ export async function mudarImagemPerfilPorUsuariosId(
         console.log(progressEvent.progress * 100);
       },
       headers: {
-        "Custom-Header": "value",
         "Content-Type": "multipart/form-data",
       },
     }
