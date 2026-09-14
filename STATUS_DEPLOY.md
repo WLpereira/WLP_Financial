@@ -48,6 +48,12 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 - [x] Iniciar frontend com `npm run dev` (porta 5173).
 - [x] Teste de login e Dashboard validado com sucesso! 🎉
 
+### ✅ Etapa 7.5 — Customização Visual e Identidade (WLP Financial)
+- [x] Removida a imagem animada gigante de "Fx finanças" do fundo.
+- [x] Cor predominante alterada de Verde (#0ACC8E) para Azul Tecnológico (#2563EB) em toda a aplicação.
+- [x] Imagem com personagens removida da tela de Login/Registro para um layout mais clean.
+- [x] Nome da logo no sistema atualizado para **WLP Financial**.
+
 ### ⏳ Etapas Restantes (Deploy Online)
 - [ ] Etapa 8: Deploy do Backend no **Render** (gratuito, sem cartão).
 - [ ] Etapa 9: Deploy do Frontend no **Cloudflare Pages** (gratuito).
