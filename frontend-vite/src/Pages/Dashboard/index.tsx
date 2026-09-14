@@ -48,7 +48,7 @@ export const Dashboard = () => {
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <h3>Receitas mÃªs</h3>
+              <h3>Receitas mês</h3>
               <h2>{receitasConvertida}</h2>
             </div>
             <RiMoneyDollarCircleFill size={tamanhoIcones} color="#FFA26B" />
@@ -58,7 +58,7 @@ export const Dashboard = () => {
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <h3>Despesas mÃªs</h3>
+              <h3>Despesas mês</h3>
               <FontDespesa>{despesasConvertida} </FontDespesa>
             </div>
             <IoBagHandle size={tamanhoIcones} color="#F78187" />
@@ -77,7 +77,7 @@ export const Dashboard = () => {
         <Card light>
           <DashboardStyle.Caixa>
             <div>
-              <strong>Selecione um mÃªs</strong>
+              <strong>Selecione um mês</strong>
               <MesSelect />
             </div>
             <MdOutlineCalendarMonth size={tamanhoIcones} color="#6979F8" />

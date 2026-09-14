@@ -1,4 +1,4 @@
-﻿import styled from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 80vw;
@@ -30,13 +30,14 @@ export const Container = styled.div`
 `;
 
 export const TextLimited = styled.p`
-  width: 160px;
+  width: auto;
+  max-width: 300px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 
   @media only screen and (max-width: 768px) {
-    width: 50px;
+    max-width: 100px;
   }
 `;
 
