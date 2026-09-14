@@ -37,7 +37,11 @@ export const MundacaImagemPerfil: React.FC = () => {
         toast.success(`Upload image realizado com sucesso`);
       },
       onError: (error: any) => {
-        toast.error(`Ops! Houve um error: ${error.response.data}`);
+        const msg =
+          error?.response?.data ||
+          error?.message ||
+          "Erro ao fazer upload da imagem.";
+        toast.error(`Ops! ${msg}`);
       },
     }
   );
