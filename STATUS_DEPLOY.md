@@ -27,13 +27,19 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
 - [x] Confirmada total compatibilidade com PostgreSQL e Supabase.
 - [x] `schema.prisma` atualizado com `directUrl` para suporte a migrations no Supabase.
 
-### 🟡 Etapa 3 e 4 — Conexão Supabase e Migração do Banco
-- [x] Projeto Supabase identificado (`vouwunakkbxvghwykxuz`).
-- [x] Script SQL completo gerado para criação de tabelas e relacionamentos via SQL Editor ou Prisma.
-- [ ] Execução das migrações e criação das tabelas no Supabase.
+### ✅ Etapa 3, 4 e 5 — Supabase e Banco de Dados
+- [x] Projeto Supabase criado (`vouwunakkbxvghwykxuz`).
+- [x] Script SQL executado com sucesso no SQL Editor do Supabase (`Success. No rows returned`).
+- [x] Todas as 9 tabelas, PKs, FKs e Índices Únicos foram criados com sucesso no banco.
+
+### 🟡 Etapa 6 — Teste Local
+- [x] Configuração dos arquivos `.env` locais para conexão.
+- [ ] Execução e validação do Backend (`npm run dev`).
+- [ ] Execução e validação do Frontend (`npm run dev`).
+- [ ] Teste do fluxo completo (cadastro, login, lançamentos, gráficos).
 
 ### ⏳ Próximos Passos
-1. Executar o script SQL no Supabase ou aplicar via Prisma (`npx prisma migrate deploy`).
-2. Testar backend e frontend rodando localmente com o banco do Supabase.
-3. Fazer deploy do backend no Render (gratuito).
-4. Fazer deploy do frontend no Cloudflare Pages (gratuito).
+1. Configurar a senha do banco em `backend/.env`.
+2. Rodar o backend e frontend localmente.
+3. Fazer deploy do backend no Render.
+4. Fazer deploy do frontend no Cloudflare Pages.
