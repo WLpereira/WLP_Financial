@@ -85,6 +85,11 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
   - Removida a animação `entradaSuave` (100vw) que fazia as células e tabelas trepidarem na tela.
 - [x] **Modais Clean & Modernos**:
   - Substituídas as telas sólidas azul e amarelo-limão neon por modais brancos elegantes com backdrop blur escuro.
+- [x] **Ajuste Fino de Contraste e Sobreposição da Sidebar**:
+  - Removido o posicionamento absoluto da logo no topo da Sidebar, eliminando a sobreposição que ficava por cima da foto de perfil.
+  - Dimensionamento harmônico da foto de perfil (44px na sidebar e 34px no header) com borda ciano vibrante.
+  - Textos dos itens do menu ("Dashboard", "Locais", "Fluxo de caixa", etc.) com contraste branco puro (`#FFFFFF`), peso 600 e ícones ciano/verde com realce moderno no hover.
+
 
 
 ### ⏳ Etapas Restantes (Deploy Online)
