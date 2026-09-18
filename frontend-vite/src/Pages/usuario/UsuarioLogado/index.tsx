@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { IoPersonRemoveSharp } from "react-icons/io5";
 import React from "react";
 
-
-import { Container, Header, Titulo, UsuarioText } from "./styles";
+import { Container, Header, ProfileInfo, Titulo, UsuarioText } from "./styles";
 
 import { Formulario } from "./components/Formulario";
 import { SecondaryButton } from "../../../Components/Buttons/SecondaryButton/ButtonDark";
@@ -17,13 +16,20 @@ export const VisualizarUsuarioLogado: React.FC = () => {
   return (
     <Container>
       <Header>
-        <ImagemPerfil caminho_image={imagePerfil!} />
-        <Titulo>
-          Seja bem-vindo a sua área <UsuarioText>{nomeUsuario}</UsuarioText>
-        </Titulo>
+        <ProfileInfo>
+          <ImagemPerfil caminho_image={imagePerfil || ""} />
+          <div>
+            <Titulo>
+              Seja bem-vindo, <UsuarioText>{nomeUsuario}</UsuarioText>
+            </Titulo>
+            <p style={{ margin: "4px 0 0 0", color: "#64748B", fontSize: "0.9rem" }}>
+              Gerencie seus dados pessoais e imagem de perfil
+            </p>
+          </div>
+        </ProfileInfo>
         <Link to={`deletar/${idUsuario}`}>
           <SecondaryButton>
-            <IoPersonRemoveSharp size={30} />
+            <IoPersonRemoveSharp size={20} />
             <p>Apagar Conta</p>
           </SecondaryButton>
         </Link>
@@ -33,3 +39,4 @@ export const VisualizarUsuarioLogado: React.FC = () => {
     </Container>
   );
 };
+

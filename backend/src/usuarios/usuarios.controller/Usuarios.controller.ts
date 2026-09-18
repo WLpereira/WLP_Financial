@@ -33,12 +33,22 @@ class UsuarioController {
 
   async buscarImagemPerfilPorId(req: Request, res: Response) {
     const { id } = req.params;
+    if (!id || id === "undefined" || id === "null") {
+      return res.status(404).end();
+    }
     try {
-      res.sendFile(`uploads/usuarios/${id}`, { root: "." });
-    } catch (error) {
-      res.status(400).json(error.message);
+      res.sendFile(`uploads/usuarios/${id}`, { root: "." }, (err) => {
+        if (err && !res.headersSent) {
+          return res.status(404).end();
+        }
+      });
+    } catch (error: any) {
+      if (!res.headersSent) {
+        res.status(404).end();
+      }
     }
   }
+
 
   async uploadImagemPerfilPorId(req: Request, res: Response) {
     try {

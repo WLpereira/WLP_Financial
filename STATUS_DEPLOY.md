@@ -89,14 +89,16 @@ Este arquivo registra o progresso em tempo real da configuração, migração e 
   - Removido o posicionamento absoluto da logo no topo da Sidebar, eliminando a sobreposição que ficava por cima da foto de perfil.
   - Dimensionamento harmônico da foto de perfil (44px na sidebar e 34px no header) com borda ciano vibrante.
   - Textos dos itens do menu ("Dashboard", "Locais", "Fluxo de caixa", etc.) com contraste branco puro (`#FFFFFF`), peso 600 e ícones ciano/verde com realce moderno no hover.
+- [x] **Tratamento de Foto de Perfil & Fallback de Avatar**:
+  - Tratamento no backend e frontend para fotos não cadastradas ou inexistentes (evitando toast de erro 500 HTML).
+  - Ícone de fallback elegante `<FaUser />` no Header, Sidebar, Drawer Mobile e Página de Perfil.
+  - Tela de edição de Perfil do Usuário redesenhada com card moderno, avatar centralizado e área de upload em destaque.
 
+### ✅ Status do Deploy Online
+- [x] Etapa 8: Deploy do Backend no **Render** (`https://wlp-financial-api.onrender.com`).
+- [x] Etapa 9: Deploy do Frontend na **Vercel** (`https://wlp-financial-green.vercel.app`).
+- [x] Etapa 10: Banco PostgreSQL Supabase conectado e em produção.
 
-
-### ⏳ Etapas Restantes (Deploy Online)
-- [ ] Etapa 8: Deploy do Backend no **Render** (gratuito, sem cartão).
-- [ ] Etapa 9: Deploy do Frontend no **Cloudflare Pages** (gratuito).
-- [ ] Etapa 10: Atualizar CORS do backend com a URL real do frontend.
-- [ ] Etapa 11: Configurar variáveis de ambiente no Render e Cloudflare.
 
 ---
 

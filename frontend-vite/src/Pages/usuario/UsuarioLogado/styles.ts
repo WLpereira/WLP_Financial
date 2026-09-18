@@ -1,33 +1,57 @@
 import styled from "styled-components";
 
-export const Titulo = styled.h2`
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-`;
 export const Container = styled.main`
-  width: 70%;
-  display: grid;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 
-  align-content: center;
-  justify-content: center;
-
-  @media screen and (max-width: 1064px) {
-    grid-template-columns: 100%;
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0.5rem 2rem 0.5rem;
   }
 `;
 
 export const Header = styled.section`
   display: flex;
-  gap: 1em;
-  /* justify-content: space-between; */
   align-items: center;
-  @media screen and (max-width: 1064px) {
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
+
+  @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    align-items: start;
+    text-align: center;
+    padding: 1.25rem;
   }
 `;
-export const UsuarioText = styled.h2`
-  color: #5968dc;
+
+export const ProfileInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
+
+export const Titulo = styled.h2`
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.3;
+`;
+
+export const UsuarioText = styled.span`
+  color: #1B3A8C;
+  font-weight: 800;
+`;
+

@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import React from "react";
+import { FaUser } from "react-icons/fa";
 
 import { Perfil } from "./styles";
 
@@ -10,14 +11,23 @@ type Props = {
 };
 
 export const ImagemPerfil: React.FC<Props> = ({ caminho_image }) => {
-  const { data: caminhoLogomarca } = useQuery(
-    ["magem-perfil", caminho_image],
-    () => buscarImagemPerfilPorCaminho(caminho_image)
+  const { data: caminhoLogomarca, isError } = useQuery(
+    ["imagem-perfil-usuariologado", caminho_image],
+    () => buscarImagemPerfilPorCaminho(caminho_image),
+    {
+      enabled: !!caminho_image && caminho_image !== "null" && caminho_image !== "undefined",
+      retry: false,
+    }
   );
 
   return (
     <Perfil>
-      <img alt="image_perfil_usuario" src={caminhoLogomarca} />
+      {caminhoLogomarca && !isError ? (
+        <img alt="Foto de perfil" src={caminhoLogomarca} />
+      ) : (
+        <FaUser size={48} color="#00B4D8" />
+      )}
     </Perfil>
   );
 };
+
