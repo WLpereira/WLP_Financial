@@ -16,20 +16,19 @@ class App {
   }
 
   private middleware(): void {
-    const corsOrigin = process.env.CORS_ORIGIN;
-    const allowedOrigins = corsOrigin
-      ? corsOrigin.split(",").map((item) => item.trim())
-      : true;
-
     this.express.use(express.json());
     this.express.use(
       cors({
-        origin: allowedOrigins,
+        origin: (origin, callback) => {
+          // Permite qualquer origem em dev ou localhost / rede local
+          callback(null, true);
+        },
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization", "auth"],
         credentials: true,
       })
     );
+
   }
 
   private routers(): void {
