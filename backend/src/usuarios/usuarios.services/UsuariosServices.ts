@@ -19,6 +19,9 @@ import { UsuariosRepository } from "../usuarios.repository/usuarios.repository";
 
 import { UsuarioValidacaoServices } from "./usuario.validacao.services/UsuarioValidacaoServices";
 
+import { resolve } from "path";
+import { UPLOAD_USUARIOS_DIR } from "../../utils/uploads/uploads";
+
 class UsuariosServices {
   constructor(
     private usuariosRepository: UsuariosRepositoryInterface,
@@ -52,8 +55,6 @@ class UsuariosServices {
     // Buscar caminho da imagem anterior
     const imagemAnterior: string = usuario?.caminho_imagem;
 
-    const imagemARemover = `uploads/usuarios/${imagemAnterior}`;
-
     await this.validacoesServices.verificarSeNaoExisteId(id);
 
     // Adiciona imagem nova
@@ -62,8 +63,16 @@ class UsuariosServices {
       imagemUsuario
     );
 
-    // Remover a imagem anterior
-    await removerArquivo(imagemARemover);
+    // Remover a imagem anterior se existir
+    if (imagemAnterior && imagemAnterior !== "null" && imagemAnterior !== "undefined") {
+      try {
+        const imagemARemover = resolve(UPLOAD_USUARIOS_DIR, imagemAnterior);
+        await removerArquivo(imagemARemover);
+      } catch (err) {
+        // Ignora se não conseguir remover a foto anterior
+      }
+    }
+
     return usuarioAtualizado;
   }
 
@@ -71,10 +80,17 @@ class UsuariosServices {
     const usuario: UsuarioDto = await this.usuariosRepository.findById(id);
     const caminhoImagem = usuario?.caminho_imagem;
 
-    const imagemARemover = `uploads/usuarios/${caminhoImagem}`;
-    await removerArquivo(imagemARemover);
+    if (caminhoImagem && caminhoImagem !== "null" && caminhoImagem !== "undefined") {
+      try {
+        const imagemARemover = resolve(UPLOAD_USUARIOS_DIR, caminhoImagem);
+        await removerArquivo(imagemARemover);
+      } catch (err) {
+        // Ignora
+      }
+    }
 
     await this.validacoesServices.verificarSeNaoExisteId(id);
+
 
     await this.subtiposRepository.deleteAllByUsuariosId(id);
     await this.tiposRepository.deleteAllByUsuariosId(id);

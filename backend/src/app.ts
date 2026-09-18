@@ -33,7 +33,25 @@ class App {
 
   private routers(): void {
     this.express.use("/api/v1", todasRouters);
+
+    // Middleware global de tratamento de erros (sempre retorna JSON e nunca HTML 500)
+    this.express.use(
+      (
+        err: any,
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction
+      ) => {
+        console.error("Erro na requisição:", err);
+        if (!res.headersSent) {
+          res
+            .status(err.status || 500)
+            .json({ error: err.message || "Erro interno do servidor" });
+        }
+      }
+    );
   }
 }
+
 
 export default new App().express;
