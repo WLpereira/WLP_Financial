@@ -22,23 +22,21 @@ import wlpLogo from "../../../assets/wlp-logo.png";
 
 /* Logotipo no topo da sidebar */
 const SidebarLogo = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  background: linear-gradient(135deg, #1B3A8C 0%, #0A1628 100%);
+  padding: 18px 12px 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 12px;
 
   img {
-    width: 130px;
+    width: 150px;
+    max-width: 90%;
     object-fit: contain;
-    filter: brightness(1.15);
+    filter: drop-shadow(0 2px 8px rgba(0, 180, 216, 0.3));
   }
 `;
+
 
 const Sidebar: React.FC = () => {
   const { nomeUsuario, imagePerfil } = buscaDadoUsuarioNaSessao();
