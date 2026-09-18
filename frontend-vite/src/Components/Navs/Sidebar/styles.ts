@@ -2,34 +2,27 @@ import styled from "styled-components";
 
 /* ─── SIDEBAR (desktop: 220px, mobile: oculto via MobileSidebar) ───────── */
 
-export const Container = styled.div`
-  width: 220px;
-  min-width: 220px;
-  height: auto;
-  min-height: 100vh;
+export const Container = styled.aside`
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
-  padding-top: 7em;
-  padding-left: 1em;
-  padding-right: 1em;
+  bottom: 0;
+  padding-top: 72px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
-  background: linear-gradient(180deg, #0A1628 0%, #0D1F3C 60%, #112240 100%);
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-
-  /* logo area at top */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5em;
-    background: linear-gradient(135deg, #1B3A8C, #00B4D8);
-    opacity: 0.12;
-    pointer-events: none;
-  }
+  gap: 6px;
+  background: #0A1628;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.25);
+  z-index: 40;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   *::-webkit-scrollbar { width: 4px; }
   *::-webkit-scrollbar-track { background: transparent; }

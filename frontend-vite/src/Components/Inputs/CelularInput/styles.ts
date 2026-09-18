@@ -2,37 +2,34 @@ import styled from "styled-components";
 import ReactInputMask from "react-input-mask";
 
 export const Campo = styled(ReactInputMask)`
-  padding: 8px;
-  font-weight: 700;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 
-  border: none;
-  box-shadow: 1px 1px 5px #717f953a;
-  border-radius: 1em;
-
-  :focus {
-    animation-name: toRight;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-    animation-fill-mode: both;
+  &:focus {
+    border-color: #00B4D8;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.18);
+    color: #0F172A;
   }
 
-  @keyframes toRight {
-    0% {
-      transform: translateX(0vw);
-    }
-
-    100% {
-      transform: translateX(0.3vw);
-    }
-  }
-  @media only screen and (max-width: 768px) {    font-size: large;
-    font-size: large;
-
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding: 11px 14px;
   }
 `;
+
 export const ContainerInput = styled.div`
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 `;
+

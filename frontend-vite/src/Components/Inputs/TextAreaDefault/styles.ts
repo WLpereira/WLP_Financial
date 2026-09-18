@@ -1,34 +1,31 @@
 import styled from "styled-components";
 
 export const Campo = styled.textarea`
-  padding: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  min-height: 100px;
+  border-radius: 10px;
+  color: #0F172A;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  resize: vertical;
 
-  background-color: transparent;
-  border: none;
-  box-shadow: 1px 1px 5px #717f953a;
-  height: 15vh;
-  border-radius: 1em;
-
-  :focus {
-    animation-name: toRight;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-  }
-
-  @keyframes toRight {
-    0% {
-      transform: translateX(0vw);
-    }
-
-    100% {
-      transform: translateX(0.3vw);
-    }
+  &:focus {
+    border-color: #00B4D8;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.18);
+    color: #0F172A;
   }
 `;
+
 export const ContainerInput = styled.div`
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 `;
+

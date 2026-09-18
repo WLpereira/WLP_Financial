@@ -1,66 +1,45 @@
-﻿import styled from "styled-components";
+import styled from "styled-components";
 
 export const BackGround = styled.section`
   display: flex;
   position: fixed;
-  z-index: 12;
-
+  z-index: 999;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-
   width: 100vw;
   height: 100vh;
-  background-color: #2563EB;
-
+  background-color: rgba(10, 22, 40, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
-
-  animation: aparecendoModalCarregando 0.2s forwards;
-
-  @keyframes aparecendoModalCarregando {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  animation: fadeIn 0.2s forwards;
 `;
+
 export const Title = styled.span`
-  font-size: large;
-  color: #faf5ff;
-  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1E293B;
+  font-weight: 600;
 `;
 
 export const Body = styled.div`
-  width: 38vw;
-  height: auto;
-
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 28px 36px;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.2);
+  border: 1px solid #E2E8F0;
   text-align: center;
-
-  display: grid;
-  gap: 1em;
-  justify-content: center;
-  align-content: center;
-  @media screen and (max-width: 769px) {
-    width: 90vw;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 90vw;
 `;
 
 export const AnimationSucesso = styled.img`
-  animation: aparecendoSucesso 1s ease-out alternate forwards;
-  @keyframes aparecendoSucesso {
-    0% {
-      transform: rotate(0deg) scale(0);
-    }
-    50% {
-      transform: rotate(-60deg) scale(1);
-    }
-    100% {
-      transform: rotate(0deg) scale(0.8);
-    }
-  }
+  width: 48px;
+  height: 48px;
 `;
+

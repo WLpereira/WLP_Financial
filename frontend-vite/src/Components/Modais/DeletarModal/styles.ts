@@ -3,55 +3,41 @@ import styled from "styled-components";
 export const BackGround = styled.div`
   display: flex;
   position: fixed;
-  z-index: 2;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #00000098;
-
+  background-color: rgba(10, 22, 40, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
-
-  animation: entradaSuaveModal 0.5s forwards;
-
-  @keyframes entradaSuaveModal {
-    0% {
-      transform: translateY(100vh);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0vh);
-      opacity: 1;
-    }
-  }
+  animation: fadeIn 0.2s forwards;
 `;
 
 export const Body = styled.div`
-  width:40vw;
+  width: 90vw;
+  max-width: 440px;
   height: auto;
-
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 16px;
+  padding: 28px 24px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.25);
+  border: 1px solid #E2E8F0;
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
-  padding: 1em;
-
-  background-color: #DCFC34;
-
-  border: none;
-  border-radius: 25px;
-  box-shadow: 2px 2px 5px #00000050;
-
-  div{
+  div {
     display: flex;
-    gap: 0.5em;
-  }
-
-  @media screen and (max-width:769px) {
-    width:90vw;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
   }
 `;
+

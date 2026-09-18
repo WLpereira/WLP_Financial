@@ -1,12 +1,16 @@
+import React from "react";
 import * as Style from "./styles";
 
 type Props = {
-  children:JSX.Element | JSX.Element[]
-}
+  children: JSX.Element | JSX.Element[];
+};
+
 export const TableComum: React.FC<Props> = ({ children }) => {
   return (
+    <Style.TableWrapper>
       <Style.Tabela>
         {children}
       </Style.Tabela>
+    </Style.TableWrapper>
   );
 };

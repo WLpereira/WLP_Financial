@@ -1,76 +1,48 @@
-﻿import styled from "styled-components";
+import styled from "styled-components";
 
 export const BackGround = styled.section`
   display: flex;
   position: fixed;
-  z-index: 12;
-
+  z-index: 999;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-
   width: 100vw;
   height: 100vh;
-  background-color: #2563EB;
-
+  background-color: rgba(10, 22, 40, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
-
-  animation: aparecendoModalCarregando 0.2s forwards;
-
-  @keyframes aparecendoModalCarregando {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  animation: fadeIn 0.2s forwards;
 `;
+
 export const Title = styled.span`
-  font-size: x-large;
-  color: #faf5ff;
-  font-weight: 800;
-  animation: novoAparecer 0.5s forwards;
+  font-size: 1.15rem;
+  color: #0F172A;
+  font-weight: 700;
+  margin-top: 8px;
 `;
 
 export const Body = styled.div`
-  width: 38vw;
-  height: auto;
-
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px 40px;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.25);
+  border: 1px solid #E2E8F0;
   text-align: center;
-
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  @media screen and (max-width: 769px) {
-    width: 90vw;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 90vw;
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 `;
 
 export const AnimationSucesso = styled.img`
-margin: auto;
-  opacity: 0.6;
-  animation: aparecendoSucesso 1s ease-out alternate forwards;
-  @keyframes aparecendoSucesso {
-    0% {
-      transform: rotate(0deg) scale(0);
-    }
-    50% {
-      transform: rotate(-60deg) scale(1);
-    }
-    100% {
-      transform: rotate(0deg) scale(0.8);
-    }
-  }
-  @keyframes novoAparecer {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
 `;
+

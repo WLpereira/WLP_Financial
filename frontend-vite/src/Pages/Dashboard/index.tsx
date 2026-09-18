@@ -1,4 +1,4 @@
-﻿import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useQuery } from "react-query";
 
 import { IoBagHandle } from "react-icons/io5";
@@ -40,7 +40,7 @@ export const Dashboard = () => {
   const despesasConvertida = converterValorEmMoedaBR(Math.abs(despesasMes));
   const saldoAtualConvertida = converterValorEmMoedaBR(saldoAtual);
 
-  const tamanhoIcones = 60;
+  const tamanhoIcones = 26;
   return (
     <DashboardStyle.Container>
       {isLoadingCabecalho && <ModalCarregando />}
@@ -51,7 +51,9 @@ export const Dashboard = () => {
               <h3>Receitas mês</h3>
               <h2>{receitasConvertida}</h2>
             </div>
-            <RiMoneyDollarCircleFill size={tamanhoIcones} color="#FFA26B" />
+            <DashboardStyle.IconBadge bg="rgba(16, 185, 129, 0.12)">
+              <RiMoneyDollarCircleFill size={tamanhoIcones} color="#10B981" />
+            </DashboardStyle.IconBadge>
           </DashboardStyle.Caixa>
         </Card>
 
@@ -59,9 +61,11 @@ export const Dashboard = () => {
           <DashboardStyle.Caixa>
             <div>
               <h3>Despesas mês</h3>
-              <FontDespesa>{despesasConvertida} </FontDespesa>
+              <FontDespesa>{despesasConvertida}</FontDespesa>
             </div>
-            <IoBagHandle size={tamanhoIcones} color="#F78187" />
+            <DashboardStyle.IconBadge bg="rgba(244, 63, 94, 0.12)">
+              <IoBagHandle size={tamanhoIcones} color="#F43F5E" />
+            </DashboardStyle.IconBadge>
           </DashboardStyle.Caixa>
         </Card>
 
@@ -69,18 +73,22 @@ export const Dashboard = () => {
           <DashboardStyle.Caixa>
             <div>
               <h3>Saldo atual</h3>
-              <h2>{saldoAtualConvertida} </h2>
+              <h2>{saldoAtualConvertida}</h2>
             </div>
-            <GiReceiveMoney size={tamanhoIcones} color="#2563EB" />
+            <DashboardStyle.IconBadge bg="rgba(27, 58, 140, 0.12)">
+              <GiReceiveMoney size={tamanhoIcones} color="#1B3A8C" />
+            </DashboardStyle.IconBadge>
           </DashboardStyle.Caixa>
         </Card>
         <Card light>
           <DashboardStyle.Caixa>
-            <div>
+            <div style={{ flex: 1, minWidth: "120px" }}>
               <strong>Selecione um mês</strong>
               <MesSelect />
             </div>
-            <MdOutlineCalendarMonth size={tamanhoIcones} color="#6979F8" />
+            <DashboardStyle.IconBadge bg="rgba(0, 180, 216, 0.12)">
+              <MdOutlineCalendarMonth size={tamanhoIcones} color="#00B4D8" />
+            </DashboardStyle.IconBadge>
           </DashboardStyle.Caixa>
         </Card>
       </DashboardStyle.Cabecalho>
@@ -88,4 +96,5 @@ export const Dashboard = () => {
       <Graficos />
     </DashboardStyle.Container>
   );
+
 };

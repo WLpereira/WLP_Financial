@@ -1,69 +1,50 @@
 import styled from "styled-components";
 
-export const BotaoPorCima = styled.div`
-
-  @media screen and (max-width: 769px) {
-    z-index: 2;
-    position: fixed;
-    top: 2vh;
-    left: 2vw;
-   
-  }
-`
-export const Body = styled.div`
-  position: absolute;
-
+export const LayoutRoot = styled.div`
   display: flex;
-  height: 80vh;
-  justify-content: center;
-  overflow-y:scroll;
-  overflow-x:hidden;
-  
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--color-bg-page, #F8FAFC);
+`;
 
-  top: 15vh;
-  width: 80vw;
-  left: 17vw;
-  @media screen and (max-width: 769px) {
-    left: 0vw;
-    right: 0vw;
-    width: 95vw;
-    margin: auto;
-    justify-content: center;
+export const MainArea = styled.div`
+  flex: 1;
+  margin-left: 240px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 240px);
+  transition: margin-left 0.3s ease;
+
+  @media screen and (max-width: 840px) {
+    margin-left: 0;
+    width: 100%;
   }
 `;
 
-export const IconFundo1Flutuante = styled.img`
-  z-index: -2;
-  position: fixed;
-  top: 20vh;
-  right: 0vw;
-  opacity: .7;
-  animation: elevations 6s ease-in infinite alternate forwards;
+export const Body = styled.main`
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 24px 40px 24px;
+  box-sizing: border-box;
 
-  @media screen and (max-width: 769px) {
-    left: 0vw;
-    width: 50vw;
-  }
-
-  @keyframes elevations {
-    0% {
-      transform: translateY(0vh);
-    }
-    100% {
-      transform: translateY(15vh);
-    }
+  @media screen and (max-width: 840px) {
+    padding: 72px 14px 28px 14px;
+    width: 100%;
   }
 `;
-export const ImagePesos2Flutuante = styled(IconFundo1Flutuante)`
-  animation: elevations 8s 1s ease-in infinite alternate forwards;
 
-  top: 10vh;
-  right: 40vw;
-  @media screen and (max-width: 769px) {
-    left: 0vw;
-    right: 0vw;
-    width: 20vw;
-    margin: auto;
-    justify-content: center;
-  }
+export const BotaoPorCima = styled.div`
+  display: none;
 `;
+
+export const IconFundo1Flutuante = styled.div`
+  display: none;
+`;
+
+export const ImagePesos2Flutuante = styled.div`
+  display: none;
+`;
+

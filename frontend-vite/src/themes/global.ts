@@ -1,35 +1,33 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    /* CSS Variables - WLP Financial Theme */
+    /* CSS Variables - WLP Financial Clean Theme */
     :root {
-      /* Core Brand Colors */
-      --color-bg-dark:      #0A1628;
-      --color-bg-mid:       #0D1F3C;
-      --color-bg-card:      #112240;
-      --color-primary:      #1B3A8C;
-      --color-primary-dark: #0F2460;
-      --color-accent-teal:  #00B4D8;
-      --color-accent-green: #00D97E;
-      --color-gradient-start: #1B3A8C;
-      --color-gradient-end:   #00B4D8;
+      /* Brand Colors */
+      --color-primary:        #1B3A8C;
+      --color-primary-dark:   #0A1628;
+      --color-primary-light:  #2563EB;
+      --color-accent-teal:    #00B4D8;
+      --color-accent-green:   #10B981;
+      --color-accent-rose:    #F43F5E;
+      --color-accent-amber:   #F59E0B;
+
+      /* Neutrals & Surfaces */
+      --color-bg-page:        #F8FAFC;
+      --color-bg-card:        #FFFFFF;
+      --color-border:         #E2E8F0;
+      --color-border-hover:   #CBD5E1;
 
       /* Text */
-      --color-text-light:   #E8EEF8;
-      --color-text-muted:   #7A90B0;
+      --color-text-main:      #0F172A;
+      --color-text-body:      #334155;
+      --color-text-muted:     #64748B;
+      --color-text-subtle:    #94A3B8;
 
       /* UI States */
-      --color-success: #00D97E;
-      --color-danger:  #FF5B7F;
-      --color-warning: #FFAB00;
-    }
-
-    *:focus {
-      outline: none;
-    }
-
-    h1, h2, h3, h4, h5, strong {
-      color: #1B3A8C;
+      --color-success:        #10B981;
+      --color-danger:         #F43F5E;
+      --color-warning:        #F59E0B;
     }
 
     * {
@@ -37,79 +35,78 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    *:focus {
+      outline: none;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--color-bg-page);
+      color: var(--color-text-body);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6, strong {
+      color: var(--color-text-main);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    p, span, label {
+      color: var(--color-text-body);
     }
 
     a {
-      color: #1B3A8C;
+      color: var(--color-primary);
       text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--color-accent-teal);
     }
 
-    body {
-      background-color: #F0F4FF;
-    }
-
-    code {
-      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    }
-
-    summary {
-      padding: 4px;
-      list-style-type: '+';
-    }
-
-    details {
-      overflow-y: scroll;
-      animation-name: showDetails;
-      animation-duration: 1s;
-    }
-
-    details[open] summary ~ * {
-      animation-name: showDetails;
-      animation-duration: 1s;
-    }
-
-    @keyframes showDetails {
-      0%   { opacity: 0; max-height: 0; }
-      100% { opacity: 1; max-height: 100%; }
-    }
-
+    /* Scrollbars elegantes */
     *::-webkit-scrollbar {
-      width: 8px;
-      border-radius: 20px;
+      width: 6px;
+      height: 6px;
     }
     *::-webkit-scrollbar-track {
-      background-color: rgba(27,58,140,0.1);
-      border-radius: 1em;
+      background: transparent;
     }
     *::-webkit-scrollbar-thumb {
-      border-radius: 20px;
-      background: linear-gradient(180deg, #1B3A8C, #00B4D8);
+      background: #CBD5E1;
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
     }
 
-    @keyframes balancar {
-      0%, 7%  { transform: rotateZ(0); }
-      15%     { transform: rotateZ(-5deg); }
-      20%     { transform: rotateZ(5deg); }
-      25%     { transform: rotateZ(-2deg); }
-      30%     { transform: rotateZ(3deg); }
-      35%     { transform: rotateZ(-1deg); }
-      40%, 100% { transform: rotateZ(0); }
-    }
-
+    /* Animações suaves e sutis (sem quebra horizontal de 100vw) */
     @keyframes entradaSuave {
-      0%   { transform: translateX(100vw); opacity: 0; }
-      100% { transform: translateX(0vw);  opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      0%   { opacity: 0; transform: translateY(20px); }
+      0%   { opacity: 0; transform: translateY(6px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes shimmer {
-      0%   { background-position: -1000px 0; }
-      100% { background-position: 1000px 0; }
+    @keyframes fadeIn {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+      0%   { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
     }
 `;
 
 export default GlobalStyle;
+

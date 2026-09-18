@@ -8,16 +8,14 @@ import {
   BsBank2,
   BsX,
 } from "react-icons/bs";
-import { FaUserAlt } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
 
 import { tiposFluxosCaixa, categorias } from "../Sidebar/data/listLinks";
-
 import * as SideBar from "./styles";
-
 import { limparSessaoUsuario } from "../../../utils/limparSessaoUsuario";
 import { buscaDadoUsuarioNaSessao } from "../../../utils/buscaDadoUsuarioNaSessao";
 import { ImagemPerfil } from "../Sidebar/ImagePerfil";
+import wlpLogo from "../../../assets/wlp-logo.png";
 
 type Props = {
   setMostrarSidebar: any;
@@ -30,96 +28,96 @@ export const MobileSidebar: React.FC<Props> = ({
 }) => {
   const { nomeUsuario, imagePerfil } = buscaDadoUsuarioNaSessao();
   const esconderSidebar = () => setMostrarSidebar(false);
+
+  if (!mostrarSidebar) return null;
+
   return (
-    <>
-      {mostrarSidebar && (
-        <SideBar.Container>
-          <SideBar.Exit role="button" onClick={() => setMostrarSidebar(false)}>
-            <BsX size={60} />
+    <SideBar.Backdrop onClick={esconderSidebar}>
+      <SideBar.Drawer onClick={(e) => e.stopPropagation()}>
+        <SideBar.DrawerHeader>
+          <SideBar.LogoImg src={wlpLogo} alt="WLP Financial" />
+          <SideBar.Exit
+            type="button"
+            aria-label="Fechar menu"
+            onClick={esconderSidebar}
+          >
+            <BsX size={32} />
           </SideBar.Exit>
-          <SideBar.Item>
-            <ImagemPerfil caminho_imagem={imagePerfil!} />
-            <Link to={"/usuario_logado"}>
-              <p>Olá {nomeUsuario}!</p>
-            </Link>
+        </SideBar.DrawerHeader>
+
+        <SideBar.PerfilContainer>
+          <ImagemPerfil caminho_imagem={imagePerfil!} />
+          <Link to={"/usuario_logado"} onClick={esconderSidebar}>
+            <strong>{nomeUsuario}</strong>
+            <span>Ver perfil</span>
+          </Link>
+        </SideBar.PerfilContainer>
+
+        <SideBar.NavList>
+          <SideBar.Item onClick={esconderSidebar}>
+            <BsFillPieChartFill size={20} color="#00B4D8" />
+            <Link to={"/dashboard"}>Dashboard</Link>
           </SideBar.Item>
 
           <SideBar.Item onClick={esconderSidebar}>
-            <BsFillPieChartFill color="#fff" />
-            <Link to={"/dashboard"}>
-              <p>Dashboard</p>
-            </Link>
-          </SideBar.Item>
-
-          <SideBar.Item onClick={esconderSidebar}>
-            <BsBank2 color="#fff" />
-            <Link to={"/locais"}>
-              <p>Locais</p>
-            </Link>
+            <BsBank2 size={20} color="#00B4D8" />
+            <Link to={"/locais"}>Locais</Link>
           </SideBar.Item>
 
           <details>
             <SideBar.ColecaoElementos>
-              <BsFillGrid3X2GapFill color="#fff" />
-              <p>Fluxo de caixa</p>
+              <BsFillGrid3X2GapFill size={20} color="#00B4D8" />
+              <span>Fluxo de Caixa</span>
             </SideBar.ColecaoElementos>
             <SideBar.Elementos>
-              {tiposFluxosCaixa.map((paginas) => {
-                return (
-                  <li key={paginas.id}>
-                    <Link to={paginas.path} onClick={esconderSidebar}>
-                      {paginas.descricao}
-                    </Link>
-                  </li>
-                );
-              })}
+              {tiposFluxosCaixa.map((paginas) => (
+                <li key={paginas.id}>
+                  <Link to={paginas.path} onClick={esconderSidebar}>
+                    {paginas.descricao}
+                  </Link>
+                </li>
+              ))}
             </SideBar.Elementos>
           </details>
 
           <SideBar.Item onClick={esconderSidebar}>
-            <BsFillBasket2Fill color="#fff" />
-            <Link to={"/tipos_despesas"}>
-              <p>Tipos de Despesas</p>
-            </Link>
+            <BsFillBasket2Fill size={20} color="#00B4D8" />
+            <Link to={"/tipos_despesas"}>Tipos de Despesas</Link>
           </SideBar.Item>
 
           <SideBar.Item onClick={esconderSidebar}>
-            <BsFillCalendarWeekFill color="#fff" />
-            <Link to={"/agenda"}>
-              <p>Agenda</p>
-            </Link>
+            <BsFillCalendarWeekFill size={20} color="#00B4D8" />
+            <Link to={"/agenda"}>Agenda</Link>
           </SideBar.Item>
 
           <details>
             <SideBar.ColecaoElementos>
-              <BsFillGrid3X2GapFill color="#fff" />
-              <p>Categorias</p>
+              <BsFillGrid3X2GapFill size={20} color="#00B4D8" />
+              <span>Categorias</span>
             </SideBar.ColecaoElementos>
             <SideBar.Elementos>
-              {categorias.map((paginas) => {
-                return (
-                  <li key={paginas.id}>
-                    <Link to={paginas.path} onClick={esconderSidebar}>
-                      {paginas.descricao}
-                    </Link>
-                  </li>
-                );
-              })}
+              {categorias.map((paginas) => (
+                <li key={paginas.id}>
+                  <Link to={paginas.path} onClick={esconderSidebar}>
+                    {paginas.descricao}
+                  </Link>
+                </li>
+              ))}
             </SideBar.Elementos>
           </details>
-          <SideBar.Item
+
+          <SideBar.LogoutItem
             onClick={() => {
               limparSessaoUsuario();
               esconderSidebar();
             }}
           >
-            <IoLogOut color="#fff" />
-            <Link to={"/"}>
-              <p>Sair</p>
-            </Link>
-          </SideBar.Item>
-        </SideBar.Container>
-      )}
-    </>
+            <IoLogOut size={22} color="#F43F5E" />
+            <Link to={"/"}>Sair</Link>
+          </SideBar.LogoutItem>
+        </SideBar.NavList>
+      </SideBar.Drawer>
+    </SideBar.Backdrop>
   );
 };
+
