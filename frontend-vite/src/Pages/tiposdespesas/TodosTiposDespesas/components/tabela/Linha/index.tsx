@@ -1,5 +1,5 @@
-
-import { Link } from "react-router-dom";
+import React from "react";
+import { AcoesItems } from "../../../../../../Components/acoes/AcoesItems";
 import { TipoDespesa } from "../../../../../../types/TipoDespesa";
 
 type Props = {
@@ -7,11 +7,14 @@ type Props = {
 };
 
 export const LinhaTipoDespesas: React.FC<Props> = ({ tipoDespesa }) => {
-
   return (
     <tr aria-label="linha">
+      <td>{tipoDespesa?.descricao}</td>
       <td>
-        <Link to={`tipos_despesas/${tipoDespesa?.id}`}>{tipoDespesa?.descricao}</Link>
+        <AcoesItems
+          caminhoPrincipal="/tipos_despesas"
+          id={tipoDespesa?.id}
+        />
       </td>
     </tr>
   );

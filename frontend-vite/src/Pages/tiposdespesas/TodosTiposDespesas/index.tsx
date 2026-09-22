@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 
 import * as TiposDespesaStyle from "./styles";
 
-import { buscarTodosTiposDespesas } from "./api";
+import { buscarTodosTiposDespesas } from "../api";
 
 import { SpinnerCarregamento } from "../../../Components/spinners/SpinnerCarregamento";
 import { TableComum } from "../../../Components/tables/TableComum";
 import { CabecalhoTabela } from "./components/tabela/CabecalhoTabela";
 import { LinhaTipoDespesas } from "./components/tabela/Linha";
 import { PaginacaoComum } from "../../../Components/paginacoes/Paginacao";
+import ButtonDefault from "../../../Components/Buttons/ButtonDefault/ButtonDark";
 
 import { TipoDespesa } from "../../../types/TipoDespesa";
 
@@ -28,20 +29,23 @@ export const TodosTiposDespesa: React.FC = () => {
       }),
     {
       onError: (error: any) => {
-        toast.error(`Houve um error: ${error.response.data}`);
+        toast.error(`Houve um erro: ${error.response?.data || error.message}`);
       },
     }
   );
 
-  const tipoDespesas = data?.data[1];
-  const totalQuantidadePaginas = data?.data[0].totalQuantidadePaginas;
-  const quantidadeTotalRegistros = data?.data[0].quantidadeTotalRegistros;
+  const tipoDespesas = data?.data?.[1] || [];
+  const totalQuantidadePaginas = data?.data?.[0]?.totalQuantidadePaginas || 0;
+  const quantidadeTotalRegistros = data?.data?.[0]?.quantidadeTotalRegistros || 0;
 
   return (
     <TiposDespesaStyle.Container>
       {isLoading && <SpinnerCarregamento />}
       <TiposDespesaStyle.Header>
-        <h3>Tipo Despesa</h3>
+        <h3>Tipos de Despesas (Meios de Movimentação)</h3>
+        <ButtonDefault onClick={() => navigate("/tipos_despesas/adicionar")}>
+          Adicionar +
+        </ButtonDefault>
       </TiposDespesaStyle.Header>
 
       <TableComum>
